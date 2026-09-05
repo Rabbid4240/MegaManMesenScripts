@@ -1,4 +1,10 @@
-﻿weapon = 0
+﻿-- Quick Weapon Swapping (MM10) for Mega Man
+-- by: Rabbid4240
+
+-- For use with MesenCE, compatability might break with other versions.
+-- Assuming using Keyboard, A to swap left, S to swap right
+
+weapon = 0
 timer = 10
 bulletPresent = 0
 pause = 0
