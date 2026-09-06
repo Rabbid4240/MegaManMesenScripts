@@ -1,4 +1,4 @@
-﻿-- Quick Weapon Swapping (MM10) for Mega Man 1
+﻿-- Quick Weapon Swapping for Mega Man 1
 -- by: Rabbid4240
 
 -- For use with MesenCE, compatability might break with other versions.
