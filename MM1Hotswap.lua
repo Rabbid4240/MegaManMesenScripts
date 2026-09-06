@@ -87,6 +87,7 @@ function inputTest()
 			weapon = 0
 		end
 		emu.write(0x5F, weapon, emu.memType.nesInternalRam)
+		changeColor()
 	end
 	if emu.isKeyPressed("A") and timer == 0 and bulletPresent == 0 and pause == 5 and yPos ~= 0 then
 		checkLockedWepLeft()
@@ -96,6 +97,7 @@ function inputTest()
 			weapon = 7
 		end
 		emu.write(0x5F, weapon, emu.memType.nesInternalRam)
+		changeColor()
 	end
 end
 
@@ -217,4 +219,3 @@ end
 
 emu.addEventCallback(inputTest, emu.eventType.inputPolled);
 emu.addEventCallback(updateInfo, emu.eventType.endFrame);
-emu.addEventCallback(changeColor, emu.eventType.endFrame);

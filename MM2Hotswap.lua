@@ -20,9 +20,7 @@ weapon = 0
 -- 0B = Item 3
 
 timer = 10
-bulletPresent = 0
 gameState = 0
-
 wepByte = 0
 wepBinary = ""
 -- CMFQBWAH (0x9A)
