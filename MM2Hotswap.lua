@@ -74,12 +74,12 @@ function updateInfo()
 		for i = 7, 0, -1 do
 			itemBinary = itemBinary .. tostring((itemByte >> i) & 1)
 		end
-	emu.drawString(0, 0, wepBinary)
-	emu.drawString(0, 10, "CMFQBWAH")
-	emu.drawString(49, 0, itemBinary)
-	emu.drawString(49, 10, "XXXXX321")
-	emu.drawString(0, 20, weapon)
-	emu.drawString(0, 30, gameState)
+--	emu.drawString(0, 0, wepBinary)
+--	emu.drawString(0, 10, "CMFQBWAH")
+--	emu.drawString(49, 0, itemBinary)
+--	emu.drawString(49, 10, "XXXXX321")
+--	emu.drawString(0, 20, weapon)
+--	emu.drawString(0, 30, gameState)
 end
 
 function inputTest()
