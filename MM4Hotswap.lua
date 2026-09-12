@@ -108,9 +108,9 @@ function updateInfo()
 	spriteFlag2 = emu.read(0x303, emu.memType.nesInternalRam, true)
 	spriteFlag3 = emu.read(0x304, emu.memType.nesInternalRam, true)
 	yPos = emu.read(0x378, emu.memType.nesInternalRam, true)
-	emu.drawString(0, 0, weapon)
-	emu.drawString(0, 10, gauge)
-	emu.drawString(0, 20, timer)
+--	emu.drawString(0, 0, weapon)
+--	emu.drawString(0, 10, gauge)
+--	emu.drawString(0, 20, timer)
 end
 
 function input()
