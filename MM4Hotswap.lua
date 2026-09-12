@@ -111,6 +111,45 @@ function updateInfo()
 --	emu.drawString(0, 0, weapon)
 --	emu.drawString(0, 10, gauge)
 --	emu.drawString(0, 20, timer)
+	if weapon == 1 then
+		emu.drawString(18, 83, "RC")
+	end
+	if weapon == 2 then
+		emu.drawString(18, 83, "RJ")
+	end
+	if weapon == 3 then
+		emu.drawString(18, 83, "RM")
+	end
+	if weapon == 4 then
+		emu.drawString(18, 83, "TO")
+	end
+	if weapon == 5 then
+		emu.drawString(19, 83, "WI")
+	end
+	if weapon == 6 then
+		emu.drawString(18, 83, "BA")
+	end
+	if weapon == 7 then
+		emu.drawString(19, 83, "DI")
+	end
+	if weapon == 8 then
+		emu.drawString(19, 83, "RI")
+	end
+	if weapon == 9 then
+		emu.drawString(18, 83, "DR")
+	end
+	if weapon == 10 then
+		emu.drawString(18, 83, "DU")
+	end
+	if weapon == 11 then
+		emu.drawString(18, 83, "PH")
+	end
+	if weapon == 12 then
+		emu.drawString(18, 83, "BR")
+	end
+	if weapon == 13 then
+		emu.drawString(18, 83, "SK")
+	end
 end
 
 function input()
