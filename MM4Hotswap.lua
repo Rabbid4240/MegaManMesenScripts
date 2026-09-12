@@ -124,7 +124,6 @@ function input()
 		swapRight()
 		checkLockedRight()
 		emu.write(0xA0, weapon, emu.memType.nesInternalRam)
-		emu.write(0x131, gauge, emu.memType.nesInternalRam)
 		changeGFX()
 		emu.write(0x18, 1, emu.memType.nesInternalRam) --refreshes the palette 
 	end
@@ -133,7 +132,6 @@ function input()
 		swapLeft()
 		checkLockedLeft()
 		emu.write(0xA0, weapon, emu.memType.nesInternalRam)
-		emu.write(0x131, gauge, emu.memType.nesInternalRam)
 		changeGFX()
 		emu.write(0x18, 1, emu.memType.nesInternalRam)
 	end
