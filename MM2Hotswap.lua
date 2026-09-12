@@ -78,6 +78,41 @@ function updateInfo()
 --	emu.drawString(49, 10, "XXXXX321")
 --	emu.drawString(0, 20, weapon)
 --	emu.drawString(0, 30, gameState)
+	if gameState == 14 then
+		if weapon == 1 then
+			emu.drawString(17, 83, "H")
+		end
+		if weapon == 2 then
+			emu.drawString(17, 83, "A")
+		end
+		if weapon == 3 then
+			emu.drawString(17, 83, "W")
+		end
+		if weapon == 4 then
+			emu.drawString(17, 83, "B")
+		end
+		if weapon == 5 then
+			emu.drawString(17, 83, "Q")
+		end
+		if weapon == 6 then
+			emu.drawString(17, 83, "F")
+		end
+		if weapon == 7 then
+			emu.drawString(17, 83, "M")
+		end
+		if weapon == 8 then
+			emu.drawString(17, 83, "C")
+		end
+		if weapon == 9 then
+			emu.drawString(17, 83, "1")
+		end
+		if weapon == 10 then
+			emu.drawString(17, 83, "2")
+		end
+		if weapon == 11 then
+			emu.drawString(17, 83, "3")
+		end
+	end
 end
 
 function inputTest()

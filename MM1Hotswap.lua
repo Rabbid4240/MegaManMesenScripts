@@ -8,7 +8,7 @@ weapon = 0
 timer = 10
 bulletPresent = 0
 pause = 0
-yPos = 0
+gameState = 0
 level = 0
 -- 0 = Cut Man
 -- 1 = Ice Man
@@ -62,16 +62,39 @@ function updateInfo()
 	weapon = emu.read(0x5F, emu.memType.nesInternalRam, true)
 	bulletPresent = emu.read(0x60, emu.memType.nesInternalRam, true)
 	pause = emu.read(0x42, emu.memType.nesInternalRam, true)
-	yPos = emu.read(0x25, emu.memType.nesInternalRam, true)
+	gameState = emu.read(0x2F, emu.memType.nesInternalRam, true)
 	level = emu.read(0x31, emu.memType.nesInternalRam, true)
 --	emu.drawString(0, 0, weapon, 0xFFFFFF)
 --	emu.drawString(0, 10, timer, 0xFFFFFF)
 --	emu.drawString(0, 20, bulletPresent, 0xFFFFFF)
 --	emu.drawString(0, 30, pause, 0xFFFFFF)
---	emu.drawString(0, 40, yPos, 0xFFFFFF)
+--	emu.drawString(0, 40, gameState, 0xFFFFFF)
 --	emu.drawString(0, 50, wepBinary, 0xFFFFFF)
 --	emu.drawString(0, 60, "MFCIGEBP", 0xFFFFFF)
 --	emu.drawString(0, 70, level, 0xFFFFFF)
+	if pause == 5 then
+		if weapon == 1 then
+			emu.drawString(17, 83, "C")
+		end
+		if weapon == 2 then
+			emu.drawString(18, 83, "I")
+		end
+		if weapon == 3 then
+			emu.drawString(17, 83, "B")
+		end
+		if weapon == 4 then
+			emu.drawString(17, 83, "F")
+		end
+		if weapon == 5 then
+			emu.drawString(17, 83, "E")
+		end
+		if weapon == 6 then
+			emu.drawString(17, 83, "G")
+		end
+		if weapon == 7 then
+			emu.drawString(17, 83, "M")
+		end
+	end
 end
 
 function inputTest()
@@ -79,7 +102,7 @@ function inputTest()
 	if timer < 0 then
 		timer = 0
 	end
-	if emu.isKeyPressed("S") and timer == 0 and bulletPresent == 0 and pause == 5 and yPos ~= 0 then
+	if emu.isKeyPressed("S") and timer == 0 and bulletPresent == 0 and pause == 5 and gameState ~= 0 then
 		checkLockedWepRight()
 		timer = 10
 		weapon = weapon + 1
@@ -89,7 +112,7 @@ function inputTest()
 		emu.write(0x5F, weapon, emu.memType.nesInternalRam)
 		changeColor()
 	end
-	if emu.isKeyPressed("A") and timer == 0 and bulletPresent == 0 and pause == 5 and yPos ~= 0 then
+	if emu.isKeyPressed("A") and timer == 0 and bulletPresent == 0 and pause == 5 and gameState ~= 0 then
 		checkLockedWepLeft()
 		timer = 10
 		weapon = weapon - 1
