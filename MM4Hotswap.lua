@@ -225,33 +225,33 @@ end
 
 --i feel like yanderedev writing this shit
 function swapRight()
-	if weapon == 0 then -- MB
+	if weapon == 0 then
 		weapon = 12
-	elseif weapon == 12 then --BR to TO
+	elseif weapon == 12 then
 		weapon = 4
-	elseif weapon == 4 then --TO to DR
+	elseif weapon == 4 then
 		weapon = 9
-	elseif weapon == 9 then --DR to PH
+	elseif weapon == 9 then
 		weapon = 11
-	elseif weapon == 11 then --PH to RI
+	elseif weapon == 11 then
 		weapon = 8
-	elseif weapon == 8 then --RI to DU
+	elseif weapon == 8 then
 		weapon = 10
-	elseif weapon == 10 then --DU to DI
+	elseif weapon == 10 then
 		weapon = 7
-	elseif weapon == 7 then --DI to SK
+	elseif weapon == 7 then
 		weapon = 13
-	elseif weapon == 13 then --SK to RC
+	elseif weapon == 13 then
 		weapon = 1
-	elseif weapon == 1 then --RC to RM
+	elseif weapon == 1 then
 		weapon = 3
-	elseif weapon == 3 then --RM to RJ
+	elseif weapon == 3 then
 		weapon = 2
-	elseif weapon == 2 then --RJ to WI
+	elseif weapon == 2 then
 		weapon = 5
-	elseif weapon == 5 then --WI to BA
+	elseif weapon == 5 then
 		weapon = 6
-	elseif weapon == 6 then --BA to MB
+	elseif weapon == 6 then
 		weapon = 0
 	end
 end
