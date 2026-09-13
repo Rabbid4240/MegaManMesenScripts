@@ -29,6 +29,10 @@ spriteFlag3 = 0
 
 yPos = 0
 
+gameState = 0
+megaState = 0
+refill = 0
+
 weapon = 0
 gauge = 0
 -- 0 = Mega Buster
@@ -108,47 +112,54 @@ function updateInfo()
 	spriteFlag2 = emu.read(0x303, emu.memType.nesInternalRam, true)
 	spriteFlag3 = emu.read(0x304, emu.memType.nesInternalRam, true)
 	yPos = emu.read(0x378, emu.memType.nesInternalRam, true)
---	emu.drawString(0, 0, weapon)
---	emu.drawString(0, 10, gauge)
---	emu.drawString(0, 20, timer)
-	if weapon == 1 then
-		emu.drawString(18, 83, "RC")
-	end
-	if weapon == 2 then
-		emu.drawString(18, 83, "RJ")
-	end
-	if weapon == 3 then
-		emu.drawString(18, 83, "RM")
-	end
-	if weapon == 4 then
-		emu.drawString(18, 83, "TO")
-	end
-	if weapon == 5 then
-		emu.drawString(19, 83, "WI")
-	end
-	if weapon == 6 then
-		emu.drawString(18, 83, "BA")
-	end
-	if weapon == 7 then
-		emu.drawString(19, 83, "DI")
-	end
-	if weapon == 8 then
-		emu.drawString(19, 83, "RI")
-	end
-	if weapon == 9 then
-		emu.drawString(18, 83, "DR")
-	end
-	if weapon == 10 then
-		emu.drawString(18, 83, "DU")
-	end
-	if weapon == 11 then
-		emu.drawString(18, 83, "PH")
-	end
-	if weapon == 12 then
-		emu.drawString(18, 83, "BR")
-	end
-	if weapon == 13 then
-		emu.drawString(18, 83, "SK")
+	gameState = emu.read(0x29, emu.memType.nesInternalRam, true)
+	megaState = emu.read(0x30, emu.memType.nesInternalRam, true)
+	refill = emu.read(0x6B, emu.memType.nesInternalRam, true)
+	emu.drawString(0, 0, weapon)
+	emu.drawString(0, 10, gauge)
+	emu.drawString(0, 20, timer)
+	emu.drawString(0, 30, gameState)
+	emu.drawString(0, 40, megaState)
+	if gameState ~= 63 then
+		if weapon == 1 then
+			emu.drawString(18, 83, "RC")
+		end
+		if weapon == 2 then
+			emu.drawString(18, 83, "RJ")
+		end
+		if weapon == 3 then
+			emu.drawString(18, 83, "RM")
+		end
+		if weapon == 4 then
+			emu.drawString(18, 83, "TO")
+		end
+		if weapon == 5 then
+			emu.drawString(19, 83, "WI")
+		end
+		if weapon == 6 then
+			emu.drawString(18, 83, "BA")
+		end
+		if weapon == 7 then
+			emu.drawString(19, 83, "DI")
+		end
+		if weapon == 8 then
+			emu.drawString(19, 83, "RI")
+		end
+		if weapon == 9 then
+			emu.drawString(18, 83, "DR")
+		end
+		if weapon == 10 then
+			emu.drawString(18, 83, "DU")
+		end
+		if weapon == 11 then
+			emu.drawString(18, 83, "PH")
+		end
+		if weapon == 12 then
+			emu.drawString(18, 83, "BR")
+		end
+		if weapon == 13 then
+			emu.drawString(18, 83, "SK")
+		end
 	end
 end
 
@@ -158,7 +169,7 @@ function input()
 		timer = 0
 	end
 
-	if emu.isKeyPressed("S") and timer == 0 and spriteFlag0 == 0 and spriteFlag1 == 0 and spriteFlag2 == 0 and spriteFlag3 == 0 and yPos ~= 100 then
+	if emu.isKeyPressed("S") and timer == 0 and spriteFlag0 == 0 and spriteFlag1 == 0 and spriteFlag2 == 0 and spriteFlag3 == 0 and gameState ~= 63 and megaState ~= 10 and refill == 0 then
 		timer = 10
 		swapRight()
 		checkLockedRight()
@@ -166,7 +177,7 @@ function input()
 		changeGFX()
 		emu.write(0x18, 1, emu.memType.nesInternalRam) --refreshes the palette 
 	end
-	if emu.isKeyPressed("A") and timer == 0 and spriteFlag0 == 0 and spriteFlag1 == 0 and spriteFlag2 == 0 and spriteFlag3 == 0 and yPos ~= 100 then
+	if emu.isKeyPressed("A") and timer == 0 and spriteFlag0 == 0 and spriteFlag1 == 0 and spriteFlag2 == 0 and spriteFlag3 == 0 and gameState ~= 63 and megaState ~= 10 and refill == 0 then
 		timer = 10
 		swapLeft()
 		checkLockedLeft()
