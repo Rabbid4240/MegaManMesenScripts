@@ -115,12 +115,12 @@ function updateInfo()
 	gameState = emu.read(0x29, emu.memType.nesInternalRam, true)
 	megaState = emu.read(0x30, emu.memType.nesInternalRam, true)
 	refill = emu.read(0x6B, emu.memType.nesInternalRam, true)
-	emu.drawString(0, 0, weapon)
-	emu.drawString(0, 10, gauge)
-	emu.drawString(0, 20, timer)
-	emu.drawString(0, 30, gameState)
-	emu.drawString(0, 40, megaState)
-	if gameState ~= 63 then
+--	emu.drawString(0, 0, weapon)
+--	emu.drawString(0, 10, gauge)
+--	emu.drawString(0, 20, timer)
+--	emu.drawString(0, 30, gameState)
+--	emu.drawString(0, 40, megaState)
+	if gameState ~= 63 and megaState ~= 8 then
 		if weapon == 1 then
 			emu.drawString(18, 83, "RC")
 		end
@@ -168,7 +168,6 @@ function input()
 	if timer < 0 then
 		timer = 0
 	end
-
 	if emu.isKeyPressed("S") and timer == 0 and spriteFlag0 == 0 and spriteFlag1 == 0 and spriteFlag2 == 0 and spriteFlag3 == 0 and gameState ~= 63 and megaState ~= 10 and refill == 0 then
 		timer = 10
 		swapRight()
